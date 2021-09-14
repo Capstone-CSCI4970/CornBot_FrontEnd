@@ -1,0 +1,17 @@
+Instructions for installing Angular10:
+
+# Download node.js
+
+# Install Angular Globally
+    ng --version => To check if angular is installed
+    If not,
+    npm install -g @angular/cli => Install angluar
+
+# Create CornBot app
+    ng new CornBot
+    (Select y to routing,
+    select CSS)
+
+# Serve and Open Application
+    cd CornBot
+    ng serve --open
