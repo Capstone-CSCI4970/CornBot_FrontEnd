@@ -1,0 +1,12 @@
+.example-spacer {
+    flex: 1 0 auto;
+  }
+
+.example-icon {
+    outline: none !important;
+    border: 0 !important;
+    border-radius: 0px;
+    outline-style: none !important;
+    background-color: Transparent;
+    color: white;
+}

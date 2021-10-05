@@ -1,0 +1,17 @@
+.loginform {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 20px;
+    width: 25%;
+}
+
+.mat-flat-button {
+    margin-top: 10px;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+}

@@ -1,26 +1,3 @@
-<div>
-  <h1>Welcome to {{title}}!</h1>
-  <div>
-    <label for="">Username</label>
-    <input [(ngModel)]= "register.username" placeholder="Username">
-  </div>
-
-  <div>
-    <label for="">Password</label>
-    <input [(ngModel)] = "register.password" type="password" placeholder="Password">
-  </div>
-
-  <div>
-    <label for="">Email</label>
-    <input [(ngModel)] = "register.email" placeholder="Email">
-  </div>
-  
-  <div>
-    <button (click)="registerUser()">Register User</button>
-    <button (click)="loginUser()">Login</button>
-  </div>
-  <div>
-    <button (click)="getTutorials()">Get tutorials</button>
-  </div>
-</div>
+<app-nav-menu></app-nav-menu>
+<router-outlet></router-outlet>
 
