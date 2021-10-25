@@ -7,3 +7,7 @@ Follow instructions in backend repository to run Django backend
 ## Release Notes: Code Milestone 1
 
 User authentication (registration and login) is functional. Front end angular is communicating with Django backend to create and authenticate users using HTTP service calls. 
+
+## Release Notes: Code Milestone 2
+
+User can use Activity One to train 10 images (selected at random from the backend). Each user label is posted to the backend for persistence. 
