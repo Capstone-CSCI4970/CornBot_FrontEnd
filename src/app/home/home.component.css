@@ -1,3 +1,19 @@
 .home-content {
     margin: 15px;
 }
+
+.icon {
+    width: 175px;
+    height: 175px;
+}
+
+.activities {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.analytics {
+    margin-left: 30px;
+}

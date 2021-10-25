@@ -1,0 +1,22 @@
+.corn-img {
+    width: 400px;
+}
+
+.label-form {
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+}
+.labels {
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+}
+
+.im-and-label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+}

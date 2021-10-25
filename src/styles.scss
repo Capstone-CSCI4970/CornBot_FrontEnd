@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+@import '~@angular/material/theming';
+@include mat-core();
+
+$corn-bot-primary: mat-palette($mat-green);
+$corn-bot-accent: mat-palette($mat-pink, A200, A100, A400);
+$corn-bot-theme: mat-light-theme($corn-bot-primary, $corn-bot-accent);
+
+@include angular-material-theme($corn-bot-theme);
