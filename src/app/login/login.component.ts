@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { UserService } from '../services/user.service';
 
 @Component({
@@ -10,7 +11,7 @@ export class LoginComponent implements OnInit {
   register: any;
   authToken = '';
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit(): void {
     this.register = {
@@ -39,6 +40,9 @@ export class LoginComponent implements OnInit {
       error =>
         console.log(error)
     )
+    sessionStorage.setItem('auth', this.authToken);
+    this.router.navigate(['/home']);
   }
 
 }
+
