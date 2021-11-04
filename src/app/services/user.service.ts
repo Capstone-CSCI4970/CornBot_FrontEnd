@@ -11,20 +11,36 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
+  /**
+   * posts username and password to backend to be saved in db
+   * @param userData 
+   * @returns HTTP Response
+   */
   registerUser(userData: any): Observable<any> {
     return this.http.post('http://localhost:8000/api/users/', userData)
   }
 
+  /**
+   * posts username and password to backend for authentication
+   * @param userData 
+   * @returns authtoken
+   */
   loginUser(userData: any): Observable<any> {
     return this.http.post('http://localhost:8000/api/auth/', userData)
   }
 
-  // // example of authentication getting tutorials endpoint
-  // getTutorials(authToken: string): Observable<any> {
-  //   const authentication = new HttpHeaders({
-  //     'Content-type': 'application/json',
-  //     'Authorization': 'token ' + authToken // need to add the authentication token to be allowed to get tutorials
-  //   })
-  //   return this.http.get('http://localhost:8000/api/tutorials', { headers: authentication})
-  // }
+  /**
+   * convenience method to get userid with username, uid is 
+   * needed to create new choice records
+   * @param username 
+   * @returns userid
+   */
+  getUID(username: string): Observable<any> {
+    const auth = new HttpHeaders({
+      'Content-type': 'application/json',
+      'Authorization': 'token ' + 'authToken'
+    });
+    return this.http.get('http://localhost:8000/api/getuid/' + username + '/')
+  }
+
 }

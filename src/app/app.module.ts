@@ -19,6 +19,8 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { ActivityOneComponent } from './activity-one/activity-one.component';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
+import { ActivityTwoComponent } from './activity-two/activity-two.component';
+import { ActivityThreeComponent } from './activity-three/activity-three.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { LeaderboardComponent } from './leaderboard/leaderboard.component';
     LoginComponent,
     HomeComponent,
     ActivityOneComponent,
-    LeaderboardComponent
+    LeaderboardComponent,
+    ActivityTwoComponent,
+    ActivityThreeComponent
   ],
   imports: [
     BrowserModule,

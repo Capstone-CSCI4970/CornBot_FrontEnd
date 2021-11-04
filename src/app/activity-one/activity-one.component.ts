@@ -31,6 +31,11 @@ export class ActivityOneComponent implements OnInit {
     })
   }
 
+  /**
+   * calls service to create a new choice record, then 
+   * increments count var to advance to next image or to 
+   * terminate the classification activity
+   */
   onSubmit() {
     let bool: boolean;
     if(this.selectedLabel == "Healthy") { bool = true; }

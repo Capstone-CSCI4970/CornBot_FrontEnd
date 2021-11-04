@@ -10,6 +10,7 @@ import { UserService } from '../services/user.service';
 export class LoginComponent implements OnInit {
   register: any;
   authToken = '';
+  uid = '';
 
   constructor(private userService: UserService, private router: Router) { }
 
@@ -20,6 +21,9 @@ export class LoginComponent implements OnInit {
     }
   }
   
+  /**
+   * calls http service to register user in database
+   */
   registerUser(): void {
     this.userService.registerUser(this.register).subscribe(
       resp => {
@@ -31,6 +35,11 @@ export class LoginComponent implements OnInit {
     console.log("Attempting to register user: ", this.register.username);
   }
 
+  /**
+   * calls http service to log in user, if an authtoken is received, 
+   * the user has been authenticated and the token is saved in localStorage
+   * username and uid are also saved in localStorage
+   */
   loginUser(): void {
     this.userService.loginUser(this.register).subscribe (
       response => {
@@ -40,7 +49,11 @@ export class LoginComponent implements OnInit {
       error =>
         console.log(error)
     )
-    sessionStorage.setItem('auth', this.authToken);
+    localStorage.setItem('auth', this.authToken);
+    this.userService.getUID(this.register.username).subscribe(response =>
+      { this.uid = response['uid']; });
+    localStorage.setItem('username', this.register.username);
+    localStorage.setItem('userID', this.uid);
     this.router.navigate(['/home']);
   }
 
