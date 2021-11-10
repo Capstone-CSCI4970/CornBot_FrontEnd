@@ -36,10 +36,10 @@ export class UserService {
    * @returns userid
    */
   getUID(username: string): Observable<any> {
-    const auth = new HttpHeaders({
-      'Content-type': 'application/json',
-      'Authorization': 'token ' + 'authToken'
-    });
+    // const auth = new HttpHeaders({
+    //   'Content-type': 'application/json',
+    //   'Authorization': 'Token ' + localStorage.getItem("auth")
+    // });
     return this.http.get('http://localhost:8000/api/getuid/' + username + '/')
   }
 

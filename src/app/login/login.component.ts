@@ -44,16 +44,20 @@ export class LoginComponent implements OnInit {
     this.userService.loginUser(this.register).subscribe (
       response => {
         this.authToken = response['token']
-        console.log("This is the authtoken: ", this.authToken)
+        console.log("This is the authtoken: "+ this.authToken)
+        localStorage.setItem('auth', this.authToken);
+        this.userService.getUID(this.register.username).subscribe(response =>
+          { this.uid = response['uid']; 
+          localStorage.setItem('userID', this.uid);
+        });
       },
       error =>
         console.log(error)
     )
-    localStorage.setItem('auth', this.authToken);
-    this.userService.getUID(this.register.username).subscribe(response =>
-      { this.uid = response['uid']; });
+
+    // console.log("auth token after subscription "+ this.authToken)
     localStorage.setItem('username', this.register.username);
-    localStorage.setItem('userID', this.uid);
+    
     this.router.navigate(['/home']);
   }
 

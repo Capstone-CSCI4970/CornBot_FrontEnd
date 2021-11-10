@@ -26,4 +26,8 @@ export class ImageService {
   postNewChoice(request: any): any {
     return this.http.post<any>('http://localhost:8000/api/choice/create/', request).subscribe();
   }
+
+  trainModel(userId: string): Observable<any> {
+    return this.http.get('http://localhost:8000/api/getTestAcc/' + userId);
+  }
 }

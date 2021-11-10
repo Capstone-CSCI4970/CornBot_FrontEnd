@@ -1,12 +1,14 @@
-<div class="im-and-label" *ngIf="notComplete">
+<div class="intro" *ngIf="!started">
+    <h1>Activity 1</h1>
+    <p>A machine learning model is only as good as the training you provide.
+        What happens if you mark all of the images as unhealthy? 
+    </p>
+    <button mat-flat-button color="primary" (click)="tryNow()">Try It Now</button>
+</div>
+<div class="im-and-label" *ngIf="notComplete && started">
     <img [src]="images[imageCount].imageUrl" class="corn-img">
     <!-- <img src="http://cornimagesbucket.s3.us-east-2.amazonaws.com/images_compressed/DSC00033.JPG"> -->
     <div class="label-form">
-        <!-- <form [formGroup]="labelForm" (ngSubmit)="onSubmit()">
-            <input type="radio" formControlName="label" value="Healthy"> Healthy
-            <input type="radio" formControlName="label" value="Unhealthy"> Unhealthy
-            <button type="submit">Submit</button>
-        </form> -->
         <mat-radio-group class="labels" [(ngModel)]="selectedLabel">
             <mat-radio-button *ngFor="let label of labels" [value]="label">
                 {{label}}
@@ -18,5 +20,7 @@
 </div>
 
 <div *ngIf="!notComplete" class="">
-    <p>done</p>
+    <p>The predictions of your model were {{accuracy}}% accurate</p>
+    <p>Hmm... that didn't work very well. Let's learn how to be a better trainer so we can improve our model.</p>
+    <button mat-flat-button color="primary" [routerLink]="['/recognize-blight']">Next</button>
 </div>

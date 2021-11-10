@@ -21,6 +21,9 @@ export class ActivityOneComponent implements OnInit {
   labels = ['Healthy', 'Unhealthy'];
   selectedLabel!: string;
   notComplete = true;
+  started = false;
+  labeledImages: ChoiceModel[] = [];
+  accuracy: number = 0;
 
   ngOnInit(): void {
     this.imageService.getImageSet().subscribe( data => {
@@ -29,6 +32,7 @@ export class ActivityOneComponent implements OnInit {
         this.images.push(datum); 
         console.log(datum.imageUrl);}
     })
+    if(localStorage.getItem("userID") != null) {console.log("userID: " + localStorage.getItem("userID")); }
   }
 
   /**
@@ -38,17 +42,34 @@ export class ActivityOneComponent implements OnInit {
    */
   onSubmit() {
     let bool: boolean;
+    const userId = localStorage.getItem("userID");
     if(this.selectedLabel == "Healthy") { bool = true; }
     else { bool = false; }
-    const newChoice: ChoiceModel = {
-      user: 8,
-      image: this.images[this.imageCount].id,
-      userLabel: bool
+    if(userId != null) {
+      const newChoice: ChoiceModel = {
+        user: parseInt(userId),
+        image: this.images[this.imageCount].id,
+        userLabel: bool
+      }
+      console.log("image id: "+this.images[this.imageCount].id);
+      this.labeledImages.push(newChoice);
     }
-    this.imageService.postNewChoice(newChoice);
+    // this.imageService.postNewChoice(newChoice);
     this.selectedLabel = '';
     this.imageCount++;
-    if(this.imageCount > 9) { this.notComplete = false; }
+    if(this.imageCount > 9) { 
+      this.notComplete = false; 
+      this.imageService.postNewChoice(this.labeledImages);
+      if(userId != null) {
+        this.imageService.trainModel(userId).subscribe(response => {
+          this.accuracy = response["Accuracy"]
+        });
+      }
+    }
+  }
+
+  tryNow() {
+    this.started = true;
   }
 
 

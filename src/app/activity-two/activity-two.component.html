@@ -1,1 +1,17 @@
-<p>activity-two works!</p>
+<div class="im-and-label" *ngIf="notComplete">
+    <img [src]="images[imageCount].imageUrl" class="corn-img">
+    <!-- <img src="http://cornimagesbucket.s3.us-east-2.amazonaws.com/images_compressed/DSC00033.JPG"> -->
+    <div class="label-form">
+        <mat-radio-group class="labels" [(ngModel)]="selectedLabel">
+            <mat-radio-button *ngFor="let label of labels" [value]="label">
+                {{label}}
+            </mat-radio-button>
+        </mat-radio-group>
+        <button mat-flat-button color="primary" (click)="onSubmit()">Submit</button>
+    </div>
+    <!-- <p>Image count: {{imageCount}}</p> -->
+</div>
+
+<div *ngIf="!notComplete" class="">
+    <p>done</p>
+</div>

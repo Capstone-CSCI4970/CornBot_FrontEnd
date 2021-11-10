@@ -21,6 +21,7 @@ import { ActivityOneComponent } from './activity-one/activity-one.component';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 import { ActivityTwoComponent } from './activity-two/activity-two.component';
 import { ActivityThreeComponent } from './activity-three/activity-three.component';
+import { RecognizeBlightComponent } from './recognize-blight/recognize-blight.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { ActivityThreeComponent } from './activity-three/activity-three.componen
     ActivityOneComponent,
     LeaderboardComponent,
     ActivityTwoComponent,
-    ActivityThreeComponent
+    ActivityThreeComponent,
+    RecognizeBlightComponent
   ],
   imports: [
     BrowserModule,
