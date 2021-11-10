@@ -11,3 +11,7 @@ User authentication (registration and login) is functional. Front end angular is
 ## Release Notes: Code Milestone 2
 
 User can use Activity One to train 10 images (selected at random from the backend). Each user label is posted to the backend for persistence. 
+
+## Release Notes: Code Milestone 3
+
+Activity 1 and 2 are functional. User labels are posted to backend, and the model is being run on those choices. 
