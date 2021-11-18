@@ -12,6 +12,8 @@ import {MatInputModule} from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
 import {MatRadioModule} from '@angular/material/radio';
+import {MatTableModule } from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
 
 
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
@@ -22,6 +24,7 @@ import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 import { ActivityTwoComponent } from './activity-two/activity-two.component';
 import { ActivityThreeComponent } from './activity-three/activity-three.component';
 import { RecognizeBlightComponent } from './recognize-blight/recognize-blight.component';
+
 
 @NgModule({
   declarations: [
@@ -47,7 +50,9 @@ import { RecognizeBlightComponent } from './recognize-blight/recognize-blight.co
     MatInputModule,
     MatFormFieldModule,
     MatButtonModule, 
-    MatRadioModule
+    MatRadioModule, 
+    MatTableModule, 
+    MatSortModule
   ],
   providers: [],
   bootstrap: [AppComponent]

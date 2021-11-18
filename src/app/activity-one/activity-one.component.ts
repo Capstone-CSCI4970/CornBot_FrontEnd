@@ -62,7 +62,8 @@ export class ActivityOneComponent implements OnInit {
       this.imageService.postNewChoice(this.labeledImages);
       if(userId != null) {
         this.imageService.trainModel(userId).subscribe(response => {
-          this.accuracy = response["Accuracy"]
+          this.accuracy = response.Accuracy;
+          console.log(response.Accuracy);
         });
       }
     }
