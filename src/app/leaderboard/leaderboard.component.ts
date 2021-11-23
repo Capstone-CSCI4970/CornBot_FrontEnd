@@ -24,6 +24,9 @@ export class LeaderboardComponent implements OnInit {
           if(typeof entry[1] == 'number') {
             this.data.push({'username': entry[0], 'accuracy': entry[1]})
           }
+          else  {
+            this.data.push({'username': entry[0], 'accuracy': 0})
+          }
         });
         console.log(this.data)
         this.dataSource = new MatTableDataSource(this.data);

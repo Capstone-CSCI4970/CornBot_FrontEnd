@@ -46,10 +46,10 @@ export class LoginComponent implements OnInit {
         this.authToken = response['token']
         console.log("This is the authtoken: "+ this.authToken)
         localStorage.setItem('auth', this.authToken);
-        this.userService.getUID(this.register.username).subscribe(response =>
-          { this.uid = response['uid']; 
-          localStorage.setItem('userID', this.uid);
-        });
+        // this.userService.getUID(this.register.username).subscribe(response =>
+        //   { this.uid = response['uid']; 
+        //   localStorage.setItem('userID', this.uid);
+        // });
       },
       error =>
         console.log(error)
@@ -60,6 +60,15 @@ export class LoginComponent implements OnInit {
     
     this.router.navigate(['/home']);
   }
+
+  // getAuthToken() {
+  //   return new Promise
+  //   this.userService.loginUser(this.register).subscribe( response => {
+  //     this.authToken = response['token']
+  //       console.log("This is the authtoken: "+ this.authToken)
+  //       localStorage.setItem('auth', this.authToken);
+  //   });
+  // }
 
 }
 

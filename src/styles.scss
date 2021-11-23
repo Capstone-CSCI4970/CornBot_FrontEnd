@@ -11,3 +11,7 @@ $corn-bot-accent: mat-palette($mat-pink, A200, A100, A400);
 $corn-bot-theme: mat-light-theme($corn-bot-primary, $corn-bot-accent);
 
 @include angular-material-theme($corn-bot-theme);
+
+.mat-flat-button {
+    color: white !important
+}

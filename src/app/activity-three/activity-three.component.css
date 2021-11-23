@@ -1,0 +1,18 @@
+.file-input {
+    display: none;
+  }
+
+.result-img {
+    width: 65%;
+}
+
+.file-upload{
+    margin: 20px;
+    width: fit-content;
+}
+
+.div-img { 
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+}

@@ -1,6 +1,11 @@
 <div class="home-content">
     <h3>Home</h3>
-    <h4> Welcome, </h4>
+    <div *ngIf="username == null">
+        <h4>Welcome, ...</h4>
+    </div>
+    <div *ngIf="username != null">
+        <h4>Welcome, {{username}}!</h4>
+    </div>
     <div class="activities">
         <div>
             <a href="http://localhost:8081/activity-one">
