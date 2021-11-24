@@ -15,3 +15,7 @@ User can use Activity One to train 10 images (selected at random from the backen
 ## Release Notes: Code Milestone 3
 
 Activity 1 and 2 are functional. User labels are posted to backend, and the model is being run on those choices. 
+
+## Release Notes: Code Milestone 4
+
+All learning activities and leaderboard are fully functional. 
