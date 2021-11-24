@@ -42,14 +42,15 @@ export class ActivityOneComponent implements OnInit {
    */
   onSubmit() {
     let bool: boolean;
-    const userId = localStorage.getItem("userID");
+    const userId = localStorage.getItem("uid");
     if(this.selectedLabel == "Healthy") { bool = true; }
     else { bool = false; }
     if(userId != null) {
       const newChoice: ChoiceModel = {
         user: parseInt(userId),
         image: this.images[this.imageCount].id,
-        userLabel: bool
+        userLabel: bool,
+        user_training_record: true
       }
       console.log("image id: "+this.images[this.imageCount].id);
       this.labeledImages.push(newChoice);
@@ -59,13 +60,14 @@ export class ActivityOneComponent implements OnInit {
     this.imageCount++;
     if(this.imageCount > 9) { 
       this.notComplete = false; 
-      this.imageService.postNewChoice(this.labeledImages);
-      if(userId != null) {
-        this.imageService.trainModel(userId).subscribe(response => {
-          this.accuracy = response.Accuracy;
-          console.log(response.Accuracy);
-        });
-      }
+      this.imageService.postNewChoice(this.labeledImages).subscribe(response => {
+        if(userId != null) {
+          this.imageService.trainModel(userId).subscribe(response => {
+            this.accuracy = response.Accuracy;
+            console.log(response.Accuracy);
+          });
+        }
+      });
     }
   }
 

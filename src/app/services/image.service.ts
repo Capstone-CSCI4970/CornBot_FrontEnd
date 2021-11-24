@@ -23,8 +23,8 @@ export class ImageService {
    * @param request (imageId, userID, choice)
    * @returns http response
    */
-  postNewChoice(request: any): any {
-    return this.http.post<any>('http://localhost:8000/api/choice/create/', request).subscribe();
+  postNewChoice(request: any): Observable<any> {
+    return this.http.post<any>('http://localhost:8000/api/choice/create/', request);
   }
 
   trainModel(userId: string): Observable<any> {

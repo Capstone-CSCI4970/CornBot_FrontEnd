@@ -18,6 +18,7 @@ export class ActivityTwoComponent implements OnInit {
   selectedLabel!: string;
   notComplete = true;
   labeledImages: ChoiceModel[] = [];
+  accuracy: number = 0;
 
   ngOnInit(): void {
     this.imageService.getImageSet().subscribe( data => {
@@ -35,14 +36,15 @@ export class ActivityTwoComponent implements OnInit {
    */
   onSubmit() {
     let bool: boolean;
-    const userId = localStorage.getItem("userID");
+    const userId = localStorage.getItem("uid");
     if(this.selectedLabel == "Healthy") { bool = true; }
     else { bool = false; }
     if(userId != null) {
       const newChoice: ChoiceModel = {
         user: parseInt(userId),
         image: this.images[this.imageCount].id,
-        userLabel: bool
+        userLabel: bool,
+        user_training_record: false
       }
       this.labeledImages.push(newChoice);
     }
@@ -50,7 +52,14 @@ export class ActivityTwoComponent implements OnInit {
     this.imageCount++;
     if(this.imageCount > 9) { 
       this.notComplete = false;
-      this.imageService.postNewChoice(this.labeledImages);
+      this.imageService.postNewChoice(this.labeledImages).subscribe(response => {
+        if(userId != null) {
+          this.imageService.trainModel(userId).subscribe(response => {
+            this.accuracy = response.Accuracy;
+            console.log(response.Accuracy);
+          });
+        }
+      });
     }
   }
 

@@ -1,8 +1,13 @@
 .images {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
 }
 
 img {
     width: 400px;
+}
+
+.component {
+    margin: 20px;
 }

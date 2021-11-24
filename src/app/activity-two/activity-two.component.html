@@ -13,5 +13,18 @@
 </div>
 
 <div *ngIf="!notComplete" class="">
-    <p>done</p>
+    <p>The predictions of your model were {{accuracy}}% accurate</p>
+    <br>
+    <p>How does that compare to your accuracy from Activity 1? What does this demonstrate 
+        about the importance of quality training data? 
+    </p>
+    <br>
+    <p>Check out the leaderboard to see how your model's accuracy compares to other users.
+        You can complete Activity 2 as many times as you like to improve your model. 
+    </p>
+    <button mat-flat-button color="primary" [routerLink]="['/leaderboard']">Leaderboard</button>
+    <br>
+    <p>Or, check out Activity 3, which will show you how a different type of machine learning model can identify blight.</p>
+    <button mat-flat-button color="primary" [routerLink]="['/activity-three']">Activity 3</button>
+
 </div>
