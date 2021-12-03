@@ -1,15 +1,18 @@
 <div class=component>
-    <input type="file" class="file-input"
-       (change)="onFileSelected($event)" #fileUpload>
+    <!-- <input type="file" class="file-input"
+       (change)="onFileSelected($event)" #fileUpload> -->
 
     <div class="file-upload">
 
         {{fileName || "No file uploaded yet."}}
 
-        <button mat-mini-fab color="primary" class="upload-btn"
+        <!-- <button mat-mini-fab color="primary" class="upload-btn"
             (click)="fileUpload.click()">
             <mat-icon>attach_file</mat-icon>
-        </button>
+        </button> -->
+        <input style="display: none" type="file" (change)="onFileChanged($event)" #fileInput>
+        <button (click)="fileInput.click()">Select File</button>
+        <button (click)="onUpload()">Upload!</button>
     </div>
     <div class="div-img">
         <img src="{{imageURL}}" class="result-img">

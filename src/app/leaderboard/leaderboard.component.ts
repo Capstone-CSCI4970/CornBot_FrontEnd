@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { UserAccModel } from '../models/user-acc-model';
 import { AnalyticsService } from '../services/analytics.service';
 import {MatSort, MatSortable, Sort} from '@angular/material/sort';
@@ -9,19 +9,26 @@ import {MatTableDataSource} from '@angular/material/table';
   templateUrl: './leaderboard.component.html',
   styleUrls: ['./leaderboard.component.css']
 })
-export class LeaderboardComponent implements OnInit {
+export class LeaderboardComponent implements OnInit, AfterViewInit {
 
   data: UserAccModel[] = [];
   displayedColumns = ['username', 'accuracy'];
   dataSource !: MatTableDataSource<UserAccModel>;
-  @ViewChild(MatSort) sort !: MatSort;
+  @ViewChild(MatSort, {static: false}) sort !: MatSort;
+//   @ViewChild(MatSort) set matSort(sort: MatSort) {
+//     this.dataSource.sort = sort;
+// }
 
   constructor(private analyticsService: AnalyticsService) { }
+  ngAfterViewInit(): void {
+      // this.dataSource.sort = this.sort;
+  }
 
   ngOnInit(): void {
     const authToken = localStorage.getItem('auth');
     if(authToken) {
       this.analyticsService.getLeaderboardData(authToken).subscribe(response => {
+          console.log(response);
           Object.entries(response).forEach(entry => {
             if(typeof entry[1] == 'number') {
               this.data.push({'username': entry[0], 'accuracy': entry[1]})
@@ -32,9 +39,10 @@ export class LeaderboardComponent implements OnInit {
           });
           console.log(this.data)
           this.dataSource = new MatTableDataSource(this.data);
+          this.dataSource.sort = this.sort;
+          this.sort.sort(({ id: 'accuracy', start: 'desc'}) as MatSortable);
       });
-      this.sort.sort(({ id: 'accuracy', start: 'desc'}) as MatSortable);
-      this.dataSource.sort = this.sort;
+
     }
   }
 
