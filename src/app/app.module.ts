@@ -14,6 +14,8 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
 
 
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
@@ -52,7 +54,9 @@ import { RecognizeBlightComponent } from './recognize-blight/recognize-blight.co
     MatButtonModule, 
     MatRadioModule, 
     MatTableModule, 
-    MatSortModule
+    MatSortModule, 
+    MatSidenavModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

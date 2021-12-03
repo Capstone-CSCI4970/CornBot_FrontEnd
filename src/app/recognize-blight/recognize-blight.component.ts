@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecognizeBlightComponent implements OnInit {
 
+  answerShown = false;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  showAnswer(): void {
+    this.answerShown = true;
   }
 
 }

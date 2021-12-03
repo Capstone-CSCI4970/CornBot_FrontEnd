@@ -1,7 +1,8 @@
+
 <mat-toolbar color="primary">
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-      <mat-icon>menu</mat-icon>
-    </button>
+  <button mat-icon-button class="example-icon">
+    <mat-icon (click)="sidenav.toggle()" class="menu-icon">menu</mat-icon>
+  </button>
     <span class="example-spacer"></span>
     <span class="header">CornBot</span>
     <span class="example-spacer"></span>
@@ -12,3 +13,21 @@
       <mat-icon>share</mat-icon>
     </button> -->
   </mat-toolbar>
+
+  <mat-sidenav-container>
+    <mat-sidenav #sidenav>
+      <mat-list class="sidenav-list">
+       <!--  <a mat-list-item [routerLink]="'/home'"> Home </a> -->
+        <a mat-list-item [routerLink]=" '\home' "> Home </a>
+        <a mat-list-item [routerLink]=" '\activity-one' ">Activity One</a>
+        <a mat-list-item [routerLink]=" '\activity-two' ">Activity Two</a>
+        <a mat-list-item [routerLink]=" '\activity-three' ">Activity Three</a>
+        <a mat-list-item [routerLink]=" '\leaderboard' ">Leaderboard</a>
+      </mat-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <div style="height: 88vh;">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>

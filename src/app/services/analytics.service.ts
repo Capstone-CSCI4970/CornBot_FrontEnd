@@ -12,7 +12,13 @@ export class AnalyticsService {
   /**
    * gets usernames and accuracies from backend
    */
-  getLeaderboardData(): Observable<any>{
-    return this.http.get<any>('http://localhost:8000/api/get_users_leaderboard/');
+  getLeaderboardData(token: string): Observable<any>{
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        Authorization: 'Token ' + token
+      })
+    };
+    return this.http.get<any>('http://localhost:8000/api/get_users_leaderboard/', httpOptions);
   }
 }

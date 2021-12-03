@@ -14,3 +14,29 @@
 .header {
   color: white;
 }
+
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 300px;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.sidenav-list {
+  display: flex;
+  flex-direction: column;
+  /* padding: 20px; */
+}
+
+a {
+  text-decoration: none;
+}
+
+.mat-drawer {
+  width: 250px;
+}

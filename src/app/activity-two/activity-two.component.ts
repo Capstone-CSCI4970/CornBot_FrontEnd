@@ -21,12 +21,15 @@ export class ActivityTwoComponent implements OnInit {
   accuracy: number = 0;
 
   ngOnInit(): void {
-    this.imageService.getImageSet().subscribe( data => {
-      for (const datum of data) {
-        datum.imageUrl = 'http://' + datum.imageUrl;
-        this.images.push(datum); 
-        console.log(datum.imageUrl);}
-    })
+    const authToken = localStorage.getItem('auth');
+      if(authToken) {
+        this.imageService.getImageSet(authToken).subscribe( data => {
+        for (const datum of data) {
+          datum.imageUrl = 'http://' + datum.imageUrl;
+          this.images.push(datum); 
+          console.log(datum.imageUrl);}
+      })
+    }
   }
 
   /**
@@ -51,15 +54,18 @@ export class ActivityTwoComponent implements OnInit {
     this.selectedLabel = '';
     this.imageCount++;
     if(this.imageCount > 9) { 
-      this.notComplete = false;
-      this.imageService.postNewChoice(this.labeledImages).subscribe(response => {
-        if(userId != null) {
-          this.imageService.trainModel(userId).subscribe(response => {
-            this.accuracy = response.Accuracy;
-            console.log(response.Accuracy);
-          });
-        }
-      });
+      this.notComplete = false; 
+      const authToken = localStorage.getItem('auth');
+      if(authToken) {
+        this.imageService.postNewChoice(this.labeledImages, authToken).subscribe(response => {
+          if(userId != null) {
+            this.imageService.trainModel(userId, authToken).subscribe(response => {
+              this.accuracy = response.Accuracy;
+              console.log(response.Accuracy);
+            });
+          }
+        });
+      }
     }
   }
 

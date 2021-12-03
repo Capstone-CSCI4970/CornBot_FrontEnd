@@ -19,20 +19,23 @@ export class LeaderboardComponent implements OnInit {
   constructor(private analyticsService: AnalyticsService) { }
 
   ngOnInit(): void {
-    this.analyticsService.getLeaderboardData().subscribe(response => {
-        Object.entries(response).forEach(entry => {
-          if(typeof entry[1] == 'number') {
-            this.data.push({'username': entry[0], 'accuracy': entry[1]})
-          }
-          else  {
-            this.data.push({'username': entry[0], 'accuracy': 0})
-          }
-        });
-        console.log(this.data)
-        this.dataSource = new MatTableDataSource(this.data);
-    });
-    // this.sort.sort(({ id: 'accuracy', start: 'desc'}) as MatSortable);
-    // this.dataSource.sort = this.sort;
+    const authToken = localStorage.getItem('auth');
+    if(authToken) {
+      this.analyticsService.getLeaderboardData(authToken).subscribe(response => {
+          Object.entries(response).forEach(entry => {
+            if(typeof entry[1] == 'number') {
+              this.data.push({'username': entry[0], 'accuracy': entry[1]})
+            }
+            else  {
+              this.data.push({'username': entry[0], 'accuracy': 0})
+            }
+          });
+          console.log(this.data)
+          this.dataSource = new MatTableDataSource(this.data);
+      });
+      this.sort.sort(({ id: 'accuracy', start: 'desc'}) as MatSortable);
+      this.dataSource.sort = this.sort;
+    }
   }
 
 }

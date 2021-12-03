@@ -14,8 +14,14 @@ export class ImageService {
    * gets a set of 10 random training images from the backend
    * @returns array of ImageModel objects (contains imageURL, imageID, filename, label)
    */
-  getImageSet(): Observable<ImageModel[]> {
-    return this.http.get<ImageModel[]>('http://localhost:8000/api/getimages/');
+  getImageSet(token: string): Observable<ImageModel[]> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        Authorization: 'Token ' + token
+      })
+    };
+    return this.http.get<ImageModel[]>('http://localhost:8000/api/getimages/', httpOptions);
   }
 
   /**
@@ -23,11 +29,23 @@ export class ImageService {
    * @param request (imageId, userID, choice)
    * @returns http response
    */
-  postNewChoice(request: any): Observable<any> {
-    return this.http.post<any>('http://localhost:8000/api/choice/create/', request);
+  postNewChoice(request: any, token: string): Observable<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        Authorization: 'Token ' + token
+      })
+    };
+    return this.http.post<any>('http://localhost:8000/api/choice/create/', request, httpOptions);
   }
 
-  trainModel(userId: string): Observable<any> {
-    return this.http.get('http://localhost:8000/api/getTestAcc/' + userId);
+  trainModel(userId: string, token: string): Observable<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        Authorization: 'Token ' + token
+      })
+    };
+    return this.http.get('http://localhost:8000/api/getTestAcc/' + userId, httpOptions);
   }
 }

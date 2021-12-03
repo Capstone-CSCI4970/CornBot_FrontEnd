@@ -36,6 +36,7 @@ export class UserService {
    * @returns userid
    */
   getUID(username: string, token: string): Observable<any> {
+    // console.log("Found auth token: " + token);
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json',

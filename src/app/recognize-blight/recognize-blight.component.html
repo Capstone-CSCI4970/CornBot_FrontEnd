@@ -1,12 +1,30 @@
 <div class="component">
+    <h3>Recognizing Northern Corn Leaf Blight</h3>
+    <p>Supervised machine learning models like the one you just tried only perform well when they are given 
+        quality training data. When you marked all of the images as unhealthy, you created a machine learning model 
+        with a strong bias that performed poorly. You can improve your model's performance by giving it more 
+        accurate training data. Let's learn how to identify Northern Corn Leaf Blight so we can label the images
+        more accurately. 
+    </p>
+    <br>
+    <p>See if you can identify which of the images below is unheathy, and why. Then click the button to check your answer.</p>
+    <button mat-flat-button color="primary" (click)="showAnswer()">Show Answer</button>
     <div class="images">
         <div>
             <img src="https://cornimagesbucket.s3.us-east-2.amazonaws.com/images_compressed/DSC00037.JPG">
-            <h4>Healthy</h4>
+            <span *ngIf="answerShown"> 
+                <h4>Healthy</h4> 
+                <p>This leaf is green with no lesions. There are no signs of blight present.</p>
+            </span>
         </div>
         <div>
             <img src="https://cornimagesbucket.s3.us-east-2.amazonaws.com/images_compressed/DSC00118.JPG">
-            <h4>Unhealthy</h4>
+            <span *ngIf="answerShown">
+                <h4>Unhealthy</h4>
+                <p class="unhealthyText"> This leaf has multiple tan lesions that are long and narrow. These lesions are caused by
+                    spores of Exserohilum turcicum fungus. 
+                </p>
+            </span>
         </div>
     </div>
     <button mat-flat-button color="primary" [routerLink]="['/activity-two']">Next</button>

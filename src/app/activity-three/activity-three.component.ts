@@ -23,10 +23,13 @@ export class ActivityThreeComponent implements OnInit {
       // const reqData = {uploadedFile: file};
       const formData = new FormData();
       formData.append("uploadedFile", file);
-      this.imageUploadService.getCNNImage(formData).subscribe(response => {
-        this.imageURL = 'data:image/png;base64,' + response['Pred_URI'];
+      const authToken = localStorage.getItem('auth');
+      if(authToken) {
+        this.imageUploadService.getCNNImage(formData, authToken).subscribe(response => {
+          this.imageURL = 'data:image/png;base64,' + response['Pred_URI'];
         // console.log(response['Pred_URI']);
-      });
+        });
+      }
     }  
   }
 
