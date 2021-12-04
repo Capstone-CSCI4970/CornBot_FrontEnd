@@ -39,13 +39,13 @@ export class ImageService {
     return this.http.post<any>('http://localhost:8000/api/choice/create/', request, httpOptions);
   }
 
-  trainModel(userId: string, token: string): Observable<any> {
+  trainModel(userId: string, token: string, activityType: string): Observable<any> {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json',
         Authorization: 'Token ' + token
       })
     };
-    return this.http.get('http://localhost:8000/api/getTestAcc/' + userId, httpOptions);
+    return this.http.get('http://localhost:8000/api/getTestAcc/' + userId + '?activity=' + activityType, httpOptions);
   }
 }
