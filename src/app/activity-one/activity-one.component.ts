@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ChoiceModel } from '../models/choice-model';
+import { ImageConfidenceModel } from '../models/image-confidence-model';
 import { ImageModel } from '../models/image-model';
 import { ImageService } from '../services/image.service';
 
@@ -24,6 +25,9 @@ export class ActivityOneComponent implements OnInit {
   started = false;
   labeledImages: ChoiceModel[] = [];
   accuracy: number = 0;
+  confidenceArray: ImageConfidenceModel[] = [];
+  sumConfidence: number = 0;
+  avgConfidence: number = 0;
 
   ngOnInit(): void {
     const authToken = localStorage.getItem('auth');
@@ -70,8 +74,23 @@ export class ActivityOneComponent implements OnInit {
             this.imageService.trainModel(userId, authToken).subscribe(response => {
               this.accuracy = response.Accuracy;
               console.log(response.Accuracy);
+              Object.entries(response.image_confidence).forEach(entry => {
+                console.log(entry[1]);
+                const imgConf: ImageConfidenceModel = <ImageConfidenceModel>entry[1];
+                imgConf.imageUrl = 'http://'+imgConf.imageUrl;
+                imgConf.confidence *= 100;
+                this.sumConfidence += imgConf.confidence;
+                this.confidenceArray.push(imgConf);
+                // if(typeof entry[1] == 'con') {
+                //   this.confidenceArray.push({'imageUrl': this.addPrefix(entry[0]), 'confidence': entry[1]})
+                // }
+              });
             });
           }
+          console.log(this.confidenceArray);
+          console.log('Sum '+this.sumConfidence);
+          console.log('length '+this.confidenceArray.length);
+          this.avgConfidence = this.sumConfidence / this.confidenceArray.length;
         });
       }
     }
@@ -79,6 +98,14 @@ export class ActivityOneComponent implements OnInit {
 
   tryNow() {
     this.started = true;
+  }
+
+  /**
+   * returns image url plus prefix needed for display
+   * @param imageURL 
+   */
+  addPrefix(imageURL: string): string {
+    return 'data:image/png;base64,' + imageURL;
   }
 
 

@@ -20,3 +20,7 @@
     justify-content: center;
     margin: 20px;
 }
+
+img.confidence-img {
+    width: 150px;
+}

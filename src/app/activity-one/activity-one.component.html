@@ -21,6 +21,13 @@
 
 <div *ngIf="!notComplete" class="">
     <p>The predictions of your model were {{accuracy}}% accurate</p>
+    <p>Confidence: {{sumConfidence/confidenceArray.length}}%</p>
     <p>Hmm... that didn't work very well. Let's learn how to be a better trainer so we can improve our model.</p>
+    <div *ngFor="let item of confidenceArray">
+        <div>
+            <img [src]="item.imageUrl" class="confidence-img">
+            <p>{{item.confidence}}%</p>
+        </div>
+    </div>
     <button mat-flat-button color="primary" [routerLink]="['/recognize-blight']">Next</button>
 </div>
