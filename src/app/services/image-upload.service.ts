@@ -15,7 +15,6 @@ export class ImageUploadService {
   getCNNImage(request: any, token: string): Observable<any> {
     const httpOptions = {
       headers: new HttpHeaders({
-        'Content-Type':  'application/json',
         Authorization: 'Token ' + token
       })
     };
