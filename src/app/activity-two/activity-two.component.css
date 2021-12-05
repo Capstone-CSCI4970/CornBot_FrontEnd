@@ -1,3 +1,4 @@
+
 .corn-img {
     width: 400px;
 }
@@ -18,5 +19,32 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    margin: 20px;
+}
+
+img.confidence-img {
+    /* width: 150px; */
+    height: 100px;
+}
+
+.heading {
+    margin-left: 20px;
+}
+
+.intro {
+    margin-left: 20px;
+}
+
+.img-array {
+    display: inline-flex;
+    margin-right: 20px;
+}
+
+.img-array p {
+    margin-top: 2px;
+    margin-bottom: 20px;
+}
+
+.completed {
     margin: 20px;
 }

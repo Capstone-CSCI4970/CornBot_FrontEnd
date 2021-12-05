@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from '../services/user.service';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-login',
@@ -11,6 +12,7 @@ export class LoginComponent implements OnInit {
   register: any;
   authToken = '';
   uid = '';
+  response!: Promise<any>;
 
   constructor(private userService: UserService, private router: Router) { }
 
@@ -41,15 +43,14 @@ export class LoginComponent implements OnInit {
    * username and uid are also saved in localStorage
    */
   loginUser(): void {
-    this.userService.loginUser(this.register).subscribe (
-      response => {
-        this.authToken = response['token']
-        console.log("This is the authtoken: "+ this.authToken)
-        localStorage.setItem('auth', this.authToken);
-        // this.userService.getUID(this.register.username).subscribe(response =>
-        //   { this.uid = response['uid']; 
-        //   localStorage.setItem('userID', this.uid);
-        // });
+    this.userService.loginUser(this.register).pipe(map(data => {this.authToken = data['token'];
+                                                        console.log("This is the authtoken: "+ this.authToken)
+        })).subscribe (response => {
+        this.userService.getUID(this.register.username, this.authToken).subscribe(response =>
+          { this.uid = response['uid']; 
+          localStorage.setItem('userID', this.uid);
+          localStorage.setItem('auth', this.authToken);
+        });
       },
       error =>
         console.log(error)
@@ -58,7 +59,7 @@ export class LoginComponent implements OnInit {
     // console.log("auth token after subscription "+ this.authToken)
     localStorage.setItem('username', this.register.username);
     
-    this.router.navigate(['/home']);
+    this.router.navigate(['/home']);    
   }
 
   // getAuthToken() {

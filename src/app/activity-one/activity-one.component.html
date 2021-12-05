@@ -1,5 +1,5 @@
+<h1 class='heading'>Activity 1</h1>
 <div class="intro" *ngIf="!started">
-    <h1>Activity 1</h1>
     <p>A machine learning model is only as good as the training you provide.
         What happens if you mark all of the images as unhealthy? 
     </p>
@@ -19,15 +19,16 @@
     <!-- <p>Image count: {{imageCount}}</p> -->
 </div>
 
-<div *ngIf="!notComplete" class="">
-    <p>The predictions of your model were {{accuracy}}% accurate</p>
-    <p>Confidence: {{sumConfidence/confidenceArray.length}}%</p>
+<div *ngIf="!notComplete" class="completed">
+    <p>The predictions of your model were {{accuracy | number: '1.0-2'}}% accurate</p>
+    <p>Confidence: {{sumConfidence/confidenceArray.length | number: '1.0-2'}}%</p>
     <p>Hmm... that didn't work very well. Let's learn how to be a better trainer so we can improve our model.</p>
-    <div *ngFor="let item of confidenceArray">
+    <div *ngFor="let item of confidenceArray" class="img-array">
         <div>
             <img [src]="item.imageUrl" class="confidence-img">
-            <p>{{item.confidence}}%</p>
+            <p>{{item.confidence | number: '1.0-2'}}%</p>
         </div>
     </div>
+    <br>
     <button mat-flat-button color="primary" [routerLink]="['/recognize-blight']">Next</button>
 </div>

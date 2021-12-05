@@ -71,7 +71,7 @@ export class ActivityOneComponent implements OnInit {
       if(authToken) {
         this.imageService.postNewChoice(this.labeledImages, authToken).subscribe(response => {
           if(userId != null) {
-            this.imageService.trainModel(userId, authToken).subscribe(response => {
+            this.imageService.trainModel(userId, authToken, '1').subscribe(response => {
               this.accuracy = response.Accuracy;
               console.log(response.Accuracy);
               Object.entries(response.image_confidence).forEach(entry => {

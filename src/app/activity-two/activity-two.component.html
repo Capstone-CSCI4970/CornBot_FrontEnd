@@ -1,6 +1,13 @@
-<div class="im-and-label" *ngIf="notComplete">
+<h1 class='heading'>Activity 2</h1>
+
+<div class="intro" *ngIf="!started">
+    <!-- <p>A machine learning model is only as good as the training you provide.
+        What happens if you mark all of the images as unhealthy? 
+    </p> -->
+    <button mat-flat-button color="primary" (click)="tryNow()">Try It Now</button>
+</div>
+<div class="im-and-label" *ngIf="notComplete && started">
     <img [src]="images[imageCount].imageUrl" class="corn-img">
-    <!-- <img src="http://cornimagesbucket.s3.us-east-2.amazonaws.com/images_compressed/DSC00033.JPG"> -->
     <div class="label-form">
         <mat-radio-group class="labels" [(ngModel)]="selectedLabel">
             <mat-radio-button *ngFor="let label of labels" [value]="label">
@@ -12,19 +19,19 @@
     <!-- <p>Image count: {{imageCount}}</p> -->
 </div>
 
-<div *ngIf="!notComplete" class="">
+<div *ngIf="!notComplete" class="completed">
     <p>The predictions of your model were {{accuracy}}% accurate</p>
     <br>
     <p>How does that compare to your accuracy from Activity 1? What does this demonstrate 
         about the importance of quality training data? 
     </p>
+    <div *ngFor="let item of confidenceArray" class="img-array">
+        <div>
+            <img [src]="item.imageUrl" class="confidence-img">
+            <p>{{item.confidence | number: '1.0-2'}}%</p>
+        </div>
+    </div>
     <br>
-    <p>Check out the leaderboard to see how your model's accuracy compares to other users.
-        You can complete Activity 2 as many times as you like to improve your model. 
-    </p>
-    <button mat-flat-button color="primary" [routerLink]="['/leaderboard']">Leaderboard</button>
-    <br>
-    <p>Or, check out Activity 3, which will show you how a different type of machine learning model can identify blight.</p>
+    <p>Check out Activity 3, which will show you how a different type of machine learning model can identify blight.</p>
     <button mat-flat-button color="primary" [routerLink]="['/activity-three']">Activity 3</button>
-
 </div>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ChoiceModel } from '../models/choice-model';
 import { ImageModel } from '../models/image-model';
 import { ImageService } from '../services/image.service';
+import { ImageConfidenceModel } from '../models/image-confidence-model';
 
 @Component({
   selector: 'app-activity-two',
@@ -17,8 +18,11 @@ export class ActivityTwoComponent implements OnInit {
   labels = ['Healthy', 'Unhealthy'];
   selectedLabel!: string;
   notComplete = true;
+  started = false;
   labeledImages: ChoiceModel[] = [];
   accuracy: number = 0;
+  confidenceArray: ImageConfidenceModel[] = [];
+  sumConfidence: number = 0;
 
   ngOnInit(): void {
     const authToken = localStorage.getItem('auth');
@@ -59,9 +63,19 @@ export class ActivityTwoComponent implements OnInit {
       if(authToken) {
         this.imageService.postNewChoice(this.labeledImages, authToken).subscribe(response => {
           if(userId != null) {
-            this.imageService.trainModel(userId, authToken).subscribe(response => {
+            this.imageService.trainModel(userId, authToken, '2').subscribe(response => {
               this.accuracy = response.Accuracy;
               console.log(response.Accuracy);
+              Object.entries(response.image_confidence).forEach(entry => {
+                console.log(entry[1]);
+                const imgConf: ImageConfidenceModel = <ImageConfidenceModel>entry[1];
+                imgConf.imageUrl = 'http://'+imgConf.imageUrl;
+                imgConf.confidence *= 100;
+                this.sumConfidence += imgConf.confidence;
+                this.confidenceArray.push(imgConf);
+              this.accuracy = response.Accuracy;
+              console.log(response.Accuracy);
+              });
             });
           }
         });
@@ -69,4 +83,7 @@ export class ActivityTwoComponent implements OnInit {
     }
   }
 
+  tryNow() {
+    this.started = true;
+  }
 }

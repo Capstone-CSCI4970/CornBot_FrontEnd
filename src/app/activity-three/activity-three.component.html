@@ -1,3 +1,5 @@
+<h1 class='heading'>Activity 3</h1>
+
 <div class=component>
     <!-- <input type="file" class="file-input"
        (change)="onFileSelected($event)" #fileUpload> -->
@@ -11,8 +13,10 @@
             <mat-icon>attach_file</mat-icon>
         </button> -->
         <input style="display: none" type="file" (change)="onFileChanged($event)" #fileInput>
-        <button (click)="fileInput.click()">Select File</button>
-        <button (click)="onUpload()">Upload!</button>
+        <button mat-flat-button color="primary" (click)="fileInput.click()">Select File</button>
+        <br>
+        <br>
+        <button mat-flat-button color="primary" (click)="onUpload()">Upload</button>
     </div>
     <div class="div-img">
         <img src="{{imageURL}}" class="result-img">

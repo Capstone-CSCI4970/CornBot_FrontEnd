@@ -1,36 +1,51 @@
 <div class="home-content">
-    <h3>Home</h3>
     <div *ngIf="username == null">
-        <h4>Welcome, ...</h4>
+        <h2>Welcome, ...</h2>
     </div>
     <div *ngIf="username != null">
-        <h4>Welcome, {{username}}!</h4>
+        <h2>Welcome, {{username}}!</h2>
     </div>
+    <h4>Activities</h4>
     <div class="activities">
-        <div>
-            <a href="http://localhost:8081/activity-one">
+        
+        <div class="element">
+            <!-- <a href="http://localhost:8081/activity-one">
                 <img class="icon" src="../../assets/img/available-activity.png">
-            </a>
+            </a> -->
+            <button mat-icon-button [routerLink]="['/activity-one']" color="primary">
+                <mat-icon class="activity-button">local_library</mat-icon>
+            </button>
             <p>Activity 1</p>
         </div>
-        <div>
-            <a href="http://localhost:8081/activity-two">
+        <div class="element">
+            <!-- <a href="http://localhost:8081/activity-two">
                 <img class="icon" src="../../assets/img/available-activity.png">
-            </a>
+            </a> -->
+            <button mat-icon-button [routerLink]="['/activity-two']" color="primary">
+                <mat-icon class="activity-button">local_library</mat-icon>
+            </button>
             <p>Activity 2</p>
         </div>
-        <div>
-            <a href="http://localhost:8081/activity-three">
+        <div class="element">
+            <!-- <a href="http://localhost:8081/activity-three">
                 <img class="icon" src="../../assets/img/available-activity.png">
-            </a>
+            </a> -->
+            <button mat-icon-button [routerLink]="['/activity-three']" color="primary">
+                <mat-icon class="activity-button">local_library</mat-icon>
+            </button>
             <p>Activity 3</p>
         </div>
     </div>
+    <h4>Analytics</h4><br>
     <div class="analytics">
+        
         <div>
-            <a href="http://localhost:8081/leaderboard">
+            <!-- <a href="http://localhost:8081/leaderboard">
                 <img class="icon" src="../../assets/img/analytics-button.png">
-            </a>
+            </a> -->
+            <button mat-icon-button [routerLink]="['/leaderboard']" color="primary" >
+                <mat-icon class="activity-button">trending_up</mat-icon>
+            </button>
             <p>Leaderboard</p>
         </div>
     </div>
