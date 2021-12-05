@@ -36,6 +36,7 @@ export class ImageService {
         Authorization: 'Token ' + token
       })
     };
+    console.log('Choice post req: ' +request);
     return this.http.post<any>('http://localhost:8000/api/choice/create/', request, httpOptions);
   }
 

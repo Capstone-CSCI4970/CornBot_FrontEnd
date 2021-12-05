@@ -49,7 +49,7 @@ export class ActivityOneComponent implements OnInit {
    */
   onSubmit() {
     let bool: boolean;
-    const userId = localStorage.getItem("uid");
+    const userId = localStorage.getItem("userID");
     if(this.selectedLabel == "Healthy") { bool = true; }
     else { bool = false; }
     if(userId != null) {
@@ -61,6 +61,7 @@ export class ActivityOneComponent implements OnInit {
       }
       console.log("image id: "+this.images[this.imageCount].id);
       this.labeledImages.push(newChoice);
+      console.log('labeled images: ' + this.labeledImages);
     }
     // this.imageService.postNewChoice(newChoice);
     this.selectedLabel = '';

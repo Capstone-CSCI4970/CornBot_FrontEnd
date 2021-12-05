@@ -43,7 +43,7 @@ export class ActivityTwoComponent implements OnInit {
    */
   onSubmit() {
     let bool: boolean;
-    const userId = localStorage.getItem("uid");
+    const userId = localStorage.getItem("userID");
     if(this.selectedLabel == "Healthy") { bool = true; }
     else { bool = false; }
     if(userId != null) {
