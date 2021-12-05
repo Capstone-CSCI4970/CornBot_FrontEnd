@@ -9,13 +9,13 @@
         <th mat-header-cell *matHeaderCellDef mat-sort-header>
          Training Accuracy
         </th>
-        <td mat-cell *matCellDef="let item"> {{item.accuracy}}% </td>
+        <td mat-cell *matCellDef="let item"> {{item.accuracy | number: '1.0-2'}}% </td>
     </ng-container>
     <ng-container matColumnDef="testAccuracy">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>
         Test Accuracy
       </th>
-      <td mat-cell *matCellDef="let item">{{item.testAccuracy}}%</td>
+      <td mat-cell *matCellDef="let item">{{item.testAccuracy | number: '1.0-2'}}%</td>
     </ng-container>
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>

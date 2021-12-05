@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav-menu',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavMenuComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  /**logs out user by clearing username, uid, and authtoken 
+   * then redirects to login screen
+   */
+  logout() {
+    localStorage.clear();
+    console.log("logged out");
+    this.router.navigate(['/login']);    
   }
 
 }
