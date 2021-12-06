@@ -50,6 +50,7 @@ export class LoginComponent implements OnInit {
           { this.uid = response['uid']; 
           localStorage.setItem('userID', this.uid);
           localStorage.setItem('auth', this.authToken);
+          this.router.navigate(['/home']);    
         });
       },
       error =>
@@ -59,7 +60,6 @@ export class LoginComponent implements OnInit {
     // console.log("auth token after subscription "+ this.authToken)
     localStorage.setItem('username', this.register.username);
     
-    this.router.navigate(['/home']);    
   }
 
   // getAuthToken() {
