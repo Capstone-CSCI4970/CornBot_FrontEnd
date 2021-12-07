@@ -1,9 +1,9 @@
 <h1 class='heading'>Activity 2</h1>
 
 <div class="intro" *ngIf="!started">
-    <!-- <p>A machine learning model is only as good as the training you provide.
-        What happens if you mark all of the images as unhealthy? 
-    </p> -->
+    <p>Now that you know how to identify blight, try labeling the images correctly. 
+        How do you think this will change the model's performance?
+    </p>
     <button mat-flat-button color="primary" (click)="tryNow()">Try It Now</button>
 </div>
 <div class="im-and-label" *ngIf="notComplete && started">
@@ -20,11 +20,19 @@
 </div>
 
 <div *ngIf="!notComplete" class="completed">
-    <p>The predictions of your model were {{accuracy}}% accurate</p>
-    <br>
+    <div class="text-icon"><p>The predictions of your model were {{accuracy | number: '1.0-2'}}% accurate. </p> <mat-icon
+        [matTooltip]="accuracyTooltip" matTooltipClass="material-tooltip">help_outline</mat-icon></div>
+        <div class="text-icon"><p>On average, your model was {{sumConfidence/confidenceArray.length | number: '1.0-2'}}% confident about
+            the predictions it made.</p><mat-icon
+            [matTooltip]="confidenceTooltip" matTooltipClass="material-tooltip">help_outline</mat-icon></div>
     <p>How does that compare to your accuracy from Activity 1? What does this demonstrate 
         about the importance of quality training data? 
     </p>
+    <br>
+    <p>Check out Activity 3, which will show you how a different type of machine learning model can identify blight.</p>
+    <button mat-flat-button color="primary" [routerLink]="['/activity-three']">Activity 3</button>
+    <br>
+    <br>
     <div *ngFor="let item of confidenceArray" class="img-array">
         <div>
             <img [src]="item.imageUrl" class="confidence-img">
@@ -32,6 +40,4 @@
         </div>
     </div>
     <br>
-    <p>Check out Activity 3, which will show you how a different type of machine learning model can identify blight.</p>
-    <button mat-flat-button color="primary" [routerLink]="['/activity-three']">Activity 3</button>
 </div>

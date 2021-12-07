@@ -26,6 +26,7 @@ import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 import { ActivityTwoComponent } from './activity-two/activity-two.component';
 import { ActivityThreeComponent } from './activity-three/activity-three.component';
 import { RecognizeBlightComponent } from './recognize-blight/recognize-blight.component';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 
 @NgModule({
@@ -56,7 +57,8 @@ import { RecognizeBlightComponent } from './recognize-blight/recognize-blight.co
     MatTableModule, 
     MatSortModule, 
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -24,6 +24,10 @@ export class ActivityTwoComponent implements OnInit {
   confidenceArray: ImageConfidenceModel[] = [];
   sumConfidence: number = 0;
 
+  accuracyTooltip = "We already know whether the images in the test set are healthy. Accuracy is calculated by comparing the model's predictions to the know health status of an image, then counting what percent the model got correct";
+  confidenceTooltip = "This confidence value is an average of the confidence values for each test set image. It tells you how sure the model was that its prediction was accurate. "
+
+
   ngOnInit(): void {
     const authToken = localStorage.getItem('auth');
       if(authToken) {

@@ -48,3 +48,9 @@ img.confidence-img {
 .completed {
     margin: 20px;
 }
+
+.text-icon {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}

@@ -1,7 +1,15 @@
 <h1 class='heading'>Activity 1</h1>
 <div class="intro" *ngIf="!started">
-    <p>A machine learning model is only as good as the training you provide.
+    <!-- <p>A machine learning model is only as good as the training you provide.
         What happens if you mark all of the images as unhealthy? 
+    </p> -->
+    <p>
+        In this activity, you will train a supervised machine learning model to recognize if a maize leaf has 
+        Northern Leaf Blight. Supervised machine learning models use a set of labeled images (training set)
+        to make predictions about new images (test set). You will be presented with a training set of 10 images. 
+        Don't worry about identifying whether the leaves are blighted yet, just label all of them as <b>unhealthy</b>. 
+        Not all of them will be unhealthy, so some of the labels you give to the model will be incorrect. 
+        How do you think that will affect the performance of the model? 
     </p>
     <button mat-flat-button color="primary" (click)="tryNow()">Try It Now</button>
 </div>
@@ -20,9 +28,27 @@
 </div>
 
 <div *ngIf="!notComplete" class="completed">
-    <p>The predictions of your model were {{accuracy | number: '1.0-2'}}% accurate</p>
-    <p>Confidence: {{sumConfidence/confidenceArray.length | number: '1.0-2'}}%</p>
-    <p>Hmm... that didn't work very well. Let's learn how to be a better trainer so we can improve our model.</p>
+    <div class="text-icon"><p>The predictions of your model were {{accuracy | number: '1.0-2'}}% accurate. </p> <mat-icon
+    [matTooltip]="accuracyTooltip" matTooltipClass="material-tooltip">help_outline</mat-icon></div>
+    <div class="text-icon"><p>On average, your model was {{sumConfidence/confidenceArray.length | number: '1.0-2'}}% confident about
+        the predictions it made.</p><mat-icon
+        [matTooltip]="confidenceTooltip" matTooltipClass="material-tooltip">help_outline</mat-icon></div>
+    <p>Below, you can see the images in the test set and how confident the model
+        was about its prediction for each image. 
+    </p>
+    <p>Was your hypothesis about the model's performance correct?</p>
+    <p>When you marked all of the images as unhealthy, the machine learning model learned that every 
+        image of a maize leaf is unhealthy. All the model knows is the training data that you give it. 
+        That's why the accuracy of this model was very low. We gave it poor quality data. The confidence
+        was very high because the model only knows of one possible choice, therefore it is very certain 
+        that choice is correct. 
+    </p>
+    <br>
+    <p>Next, we will learn how to recognize Northern Corn Blight so we can provide the model with better quality data. </p>
+    <br>
+    <button mat-flat-button color="primary" [routerLink]="['/recognize-blight']">Next</button>
+    <br>
+    <br>
     <div *ngFor="let item of confidenceArray" class="img-array">
         <div>
             <img [src]="item.imageUrl" class="confidence-img">
@@ -30,5 +56,4 @@
         </div>
     </div>
     <br>
-    <button mat-flat-button color="primary" [routerLink]="['/recognize-blight']">Next</button>
 </div>
