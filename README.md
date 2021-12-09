@@ -2,9 +2,13 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.4.
 
-To run application: npm install
+To run application: 
+
+npm install
+
 ng serve --port 8081
-Note: The application was generating compile time errors about missing types for D3. This should have been resolved since rollback to a previous version of Ngx charts, but if the errors occur, run 'npm install @types/d3 --save-dev' to resolve them. 
+
+Note: At one point, ngx charts was causing compilation errors regarding missing types for d3. This issue should be fixed with a rollback to a previous ngx chart version, but if you do see these errors, run ‘npm install @types/d3 --save-dev’ to resolve. It is not necessary to run every command recommended by the compiler. 
 
 Follow instructions in backend repository to run Django backend
 
