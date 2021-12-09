@@ -46,7 +46,7 @@
   <li>Interfaces</li>
   <li
   >
-  ChoiceModel</li>
+  ImageConfidenceModel</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -64,7 +64,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/app/models/choice-model.ts</code>
+            <code>src/app/models/image-confidence-model.ts</code>
         </p>
 
 
@@ -83,27 +83,15 @@
                         <td class="col-md-4">
                             <ul class="index-list">
                                 <li>
-                                        <a href="#image" 
+                                        <a href="#confidence" 
 >
-                                            image
+                                            confidence
                                         </a>
                                 </li>
                                 <li>
-                                        <a href="#user" 
+                                        <a href="#imageUrl" 
 >
-                                            user
-                                        </a>
-                                </li>
-                                <li>
-                                        <a href="#user_training_record" 
->
-                                            user_training_record
-                                        </a>
-                                </li>
-                                <li>
-                                        <a href="#userLabel" 
->
-                                            userLabel
+                                            imageUrl
                                         </a>
                                 </li>
                             </ul>
@@ -121,9 +109,9 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="image"></a>
-                                        <span class="name "><b>image</b>
-                                            <a href="#image">
+                                        <a name="confidence"></a>
+                                        <span class="name "><b>confidence</b>
+                                            <a href="#confidence">
                                                 <span class="icon ion-ios-link"></span>
                                             </a>
                                         </span>
@@ -131,7 +119,7 @@
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>image:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                        <code>confidence:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
 </code>
                                     </td>
                                 </tr>
@@ -154,9 +142,9 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="user"></a>
-                                        <span class="name "><b>user</b>
-                                            <a href="#user">
+                                        <a name="imageUrl"></a>
+                                        <span class="name "><b>imageUrl</b>
+                                            <a href="#imageUrl">
                                                 <span class="icon ion-ios-link"></span>
                                             </a>
                                         </span>
@@ -164,7 +152,7 @@
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>user:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                        <code>imageUrl:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 </code>
                                     </td>
                                 </tr>
@@ -172,73 +160,7 @@
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-
-                                        </td>
-                                    </tr>
-
-
-
-
-
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <a name="user_training_record"></a>
-                                        <span class="name "><b>user_training_record</b>
-                                            <a href="#user_training_record">
-                                                <span class="icon ion-ios-link"></span>
-                                            </a>
-                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <code>user_training_record:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-</code>
-                                    </td>
-                                </tr>
-
-
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-
-                                        </td>
-                                    </tr>
-
-
-
-
-
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <a name="userLabel"></a>
-                                        <span class="name "><b>userLabel</b>
-                                            <a href="#userLabel">
-                                                <span class="icon ion-ios-link"></span>
-                                            </a>
-                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <code>userLabel:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-</code>
-                                    </td>
-                                </tr>
-
-
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 
                                         </td>
                                     </tr>
@@ -254,11 +176,9 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">export interface ChoiceModel {
-    user: number; //user id
-    image: number; //image id
-    userLabel: boolean;
-    user_training_record: boolean; //true if activity on
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">export interface ImageConfidenceModel {
+    &#x27;imageUrl&#x27;: string,
+    &#x27;confidence&#x27;: number
 }</code></pre>
     </div>
 </div>
@@ -286,7 +206,7 @@
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
-            var COMPODOC_CURRENT_PAGE_URL = 'ChoiceModel.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'ImageConfidenceModel.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 
