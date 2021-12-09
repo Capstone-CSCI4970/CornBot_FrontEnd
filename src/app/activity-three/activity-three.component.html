@@ -3,7 +3,13 @@
 <div class=component>
     <!-- <input type="file" class="file-input"
        (change)="onFileSelected($event)" #fileUpload> -->
-
+    <p>In this activity, you will use a Convolutional Neural Network machine learning model to detect 
+        where blight lesions are on a corn leaf (if they exist). Before, you were training a machine 
+        learning model, but this model has already been trained to recognize blight. Like the training 
+        you performed in the previous activities, the CNN model was given a training set of images 
+        where bounding boxes were hand drawn around each blight lesion. Now, this model is ready to 
+        be run on new images. Try uploading your own image of a corn leaf and see what happens.</p>
+    <br>
     <div class="file-upload">
 
         {{fileName || "No file uploaded yet."}}
@@ -17,8 +23,13 @@
         <br>
         <br>
         <button mat-flat-button color="primary" (click)="onUpload()">Upload</button>
+        <br>
     </div>
-    <div class="div-img">
+    <div class="div-img" *ngIf="imageURL != ''">
         <img src="{{imageURL}}" class="result-img">
+        <p>The red rectangles are called bounding boxes, and they indicate where the model thinks that 
+            it has found a blight lesion. The number on each bounding box is the confidence value which 
+            tells you how confident the model was that a lesion is found within that box. 
+        </p>
     </div>
 </div>

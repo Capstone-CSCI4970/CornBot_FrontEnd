@@ -6,6 +6,7 @@ import { ActivityTwoComponent } from './activity-two/activity-two.component';
 import { HomeComponent } from './home/home.component';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 import { LoginComponent } from './login/login.component';
+import { MisclassifiedImagesComponent } from './misclassified-images/misclassified-images.component';
 import { RecognizeBlightComponent } from './recognize-blight/recognize-blight.component';
 
 const routes: Routes = [
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path: 'activity-two', component: ActivityTwoComponent},
   {path: 'recognize-blight', component: RecognizeBlightComponent},
   {path: 'activity-three', component: ActivityThreeComponent},
+  {path: 'misclassified-images', component: MisclassifiedImagesComponent},
   {path:'', redirectTo:'login', pathMatch: 'full'}
 ];
 

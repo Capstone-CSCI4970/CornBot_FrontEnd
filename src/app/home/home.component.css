@@ -16,6 +16,8 @@
 
 .analytics {
     margin-left: 30px;
+    margin-right: 30px;
+    display: flex;
 }
 
 .activity-button {

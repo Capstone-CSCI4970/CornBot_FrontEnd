@@ -1,0 +1,25 @@
+<div class="component">
+    <div class="chart">
+        <h3>Most Frequently Mislabeled Images</h3>
+        <ngx-charts-bar-vertical
+        [view]="view"
+        [results]="data"
+        [gradient]="gradient"
+        [xAxis]="showXAxis"
+        [yAxis]="showYAxis"
+        [legend]="showLegend"
+        [scheme]="colorScheme"
+        [showXAxisLabel]="showXAxisLabel"
+        [showYAxisLabel]="showYAxisLabel"
+        [xAxisLabel]="xAxisLabel"
+        [yAxisLabel]="yAxisLabel">
+        </ngx-charts-bar-vertical>
+    </div>
+    <div class="legend" *ngFor="let image of imageURLS; let i=index">
+        <div class="legend-entry">
+            <img [src]="image">
+            <p>Image {{i + 1}}</p>
+        </div>
+    </div>
+</div>
+

@@ -2,12 +2,15 @@
     display: none;
   }
 
-.result-img {
+  .result-img{
     width: 65%;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 .file-upload{
-    margin: 20px;
+    /* margin: 20px; */
     width: fit-content;
 }
 
@@ -19,4 +22,8 @@
 
 .heading {
     margin-left: 20px;
+}
+
+.component {
+    margin: 20px;
 }

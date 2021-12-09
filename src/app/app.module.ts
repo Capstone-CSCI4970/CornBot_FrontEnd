@@ -16,6 +16,7 @@ import {MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { NgxChartsModule }from '@swimlane/ngx-charts';
 
 
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
@@ -27,6 +28,7 @@ import { ActivityTwoComponent } from './activity-two/activity-two.component';
 import { ActivityThreeComponent } from './activity-three/activity-three.component';
 import { RecognizeBlightComponent } from './recognize-blight/recognize-blight.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MisclassifiedImagesComponent } from './misclassified-images/misclassified-images.component';
 
 
 @NgModule({
@@ -39,7 +41,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     LeaderboardComponent,
     ActivityTwoComponent,
     ActivityThreeComponent,
-    RecognizeBlightComponent
+    RecognizeBlightComponent,
+    MisclassifiedImagesComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +61,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatSortModule, 
     MatSidenavModule,
     MatListModule,
-    MatTooltipModule
+    MatTooltipModule,
+    NgxChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
