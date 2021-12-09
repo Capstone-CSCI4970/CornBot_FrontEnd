@@ -38,7 +38,7 @@
   <li>Components</li>
   <li
   >
-  NavMenuComponent</li>
+  RecognizeBlightComponent</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -64,7 +64,7 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/nav-menu/nav-menu.component.ts</code>
+    <code>src/app/recognize-blight/recognize-blight.component.ts</code>
 </p>
 
 
@@ -95,19 +95,19 @@
 
             <tr>
                 <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>app-nav-menu</code></td>
+                <td class="col-md-9"><code>app-recognize-blight</code></td>
             </tr>
 
             <tr>
                 <td class="col-md-3">styleUrls</td>
-                <td class="col-md-9"><code>./nav-menu.component.css</code></td>
+                <td class="col-md-9"><code>./recognize-blight.component.css</code></td>
             </tr>
 
 
 
             <tr>
                 <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>./nav-menu.component.html</code></td>
+                <td class="col-md-9"><code>./recognize-blight.component.html</code></td>
             </tr>
 
 
@@ -125,6 +125,20 @@
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#answerShown" >answerShown</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -135,10 +149,10 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#logout" >logout</a>
+                                <a href="#ngOnInit" >ngOnInit</a>
                             </li>
                             <li>
-                                <a href="#ngOnInit" >ngOnInit</a>
+                                <a href="#showAnswer" >showAnswer</a>
                             </li>
                         </ul>
                     </td>
@@ -158,45 +172,15 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
+<code>constructor()</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/nav-menu/nav-menu.component.ts:9</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/recognize-blight/recognize-blight.component.ts:10</a></div>
                             </td>
                         </tr>
 
-                <tr>
-                    <td class="col-md-4">
-                            <div>
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>router</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                    </td>
-                </tr>
             </tbody>
         </table>
 </section>
@@ -210,46 +194,6 @@
     <h3 id="methods">
         Methods
     </h3>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="logout"></a>
-                    <span class="name">
-                        <span ><b>logout</b></span>
-                        <a href="#logout"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>logout()</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="19"
-                            class="link-to-prism">src/app/nav-menu/nav-menu.component.ts:19</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-description"><p>logs out user by clearing username, uid, and authtoken
-then redirects to login screen</p>
-</div>
-
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
     <table class="table table-sm table-bordered">
         <tbody>
             <tr>
@@ -270,8 +214,45 @@ then redirects to login screen</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="13"
-                            class="link-to-prism">src/app/nav-menu/nav-menu.component.ts:13</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="14"
+                            class="link-to-prism">src/app/recognize-blight/recognize-blight.component.ts:14</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="showAnswer"></a>
+                    <span class="name">
+                        <span ><b>showAnswer</b></span>
+                        <a href="#showAnswer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>showAnswer()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="17"
+                            class="link-to-prism">src/app/recognize-blight/recognize-blight.component.ts:17</a></div>
                 </td>
             </tr>
 
@@ -288,33 +269,60 @@ then redirects to login screen</p>
         </tbody>
     </table>
 </section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="answerShown"></a>
+                    <span class="name">
+                        <span ><b>answerShown</b></span>
+                        <a href="#answerShown"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/recognize-blight/recognize-blight.component.ts:10</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
 
 </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
-import { Router } from &#x27;@angular/router&#x27;;
 
 @Component({
-  selector: &#x27;app-nav-menu&#x27;,
-  templateUrl: &#x27;./nav-menu.component.html&#x27;,
-  styleUrls: [&#x27;./nav-menu.component.css&#x27;]
+  selector: &#x27;app-recognize-blight&#x27;,
+  templateUrl: &#x27;./recognize-blight.component.html&#x27;,
+  styleUrls: [&#x27;./recognize-blight.component.css&#x27;]
 })
-export class NavMenuComponent implements OnInit {
+export class RecognizeBlightComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  answerShown &#x3D; false;
+
+  constructor() { }
 
   ngOnInit(): void {
   }
 
-  /**logs out user by clearing username, uid, and authtoken 
-   * then redirects to login screen
-   */
-  logout() {
-    localStorage.clear();
-    console.log(&quot;logged out&quot;);
-    this.router.navigate([&#x27;/login&#x27;]);    
+  showAnswer(): void {
+    this.answerShown &#x3D; true;
   }
 
 }
@@ -322,83 +330,61 @@ export class NavMenuComponent implements OnInit {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">
-&lt;mat-toolbar color&#x3D;&quot;primary&quot;&gt;
-  &lt;button mat-icon-button class&#x3D;&quot;example-icon&quot;&gt;
-    &lt;mat-icon (click)&#x3D;&quot;sidenav.toggle()&quot; class&#x3D;&quot;menu-icon&quot;&gt;menu&lt;/mat-icon&gt;
-  &lt;/button&gt;
-    &lt;span class&#x3D;&quot;example-spacer&quot;&gt;&lt;/span&gt;
-    &lt;span class&#x3D;&quot;header&quot;&gt;CornBot&lt;/span&gt;
-    &lt;span class&#x3D;&quot;example-spacer&quot;&gt;&lt;/span&gt;
-    &lt;button mat-flat-button color&#x3D;&quot;primary&quot; class&#x3D;&quot;logout-button&quot; (click)&#x3D;&quot;logout()&quot;&gt;Logout&lt;/button&gt;
-  &lt;/mat-toolbar&gt;
-
-  &lt;mat-sidenav-container&gt;
-    &lt;mat-sidenav #sidenav&gt;
-      &lt;mat-list class&#x3D;&quot;sidenav-list&quot;&gt;
-       &lt;!--  &lt;a mat-list-item [routerLink]&#x3D;&quot;&#x27;/home&#x27;&quot;&gt; Home &lt;/a&gt; --&gt;
-        &lt;a mat-list-item [routerLink]&#x3D;&quot; &#x27;\home&#x27; &quot;&gt; Home &lt;/a&gt;
-        &lt;a mat-list-item [routerLink]&#x3D;&quot; &#x27;\activity-one&#x27; &quot;&gt;Activity One&lt;/a&gt;
-        &lt;a mat-list-item [routerLink]&#x3D;&quot; &#x27;\activity-two&#x27; &quot;&gt;Activity Two&lt;/a&gt;
-        &lt;a mat-list-item [routerLink]&#x3D;&quot; &#x27;\activity-three&#x27; &quot;&gt;Activity Three&lt;/a&gt;
-        &lt;a mat-list-item [routerLink]&#x3D;&quot; &#x27;\leaderboard&#x27; &quot;&gt;Leaderboard&lt;/a&gt;
-        &lt;a mat-list-item [routerLink]&#x3D;&quot; &#x27;\misclassified-images&#x27; &quot;&gt;Misclassification Analytics&lt;/a&gt;
-      &lt;/mat-list&gt;
-    &lt;/mat-sidenav&gt;
-    &lt;mat-sidenav-content&gt;
-      &lt;div style&#x3D;&quot;height: 88vh;&quot;&gt;
-        &lt;router-outlet&gt;&lt;/router-outlet&gt;
-      &lt;/div&gt;
-    &lt;/mat-sidenav-content&gt;
-  &lt;/mat-sidenav-container&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;component&quot;&gt;
+    &lt;h3&gt;Recognizing Northern Corn Leaf Blight&lt;/h3&gt;
+    &lt;p&gt;Supervised machine learning models like the one you just tried only perform well when they are given 
+        quality training data. When you marked all of the images as unhealthy, you created a machine learning model 
+        with a strong bias that performed poorly. You can improve your model&#x27;s performance by giving it more 
+        accurate training data. Let&#x27;s learn how to identify Northern Corn Leaf Blight so we can label the images
+        more accurately. 
+    &lt;/p&gt;
+    &lt;br&gt;
+    &lt;p&gt;See if you can identify which of the images below is unheathy, and why. Then click the button to check your answer.&lt;/p&gt;
+    &lt;button mat-flat-button color&#x3D;&quot;primary&quot; (click)&#x3D;&quot;showAnswer()&quot;&gt;Show Answer&lt;/button&gt;
+    &lt;div class&#x3D;&quot;images&quot;&gt;
+        &lt;div&gt;
+            &lt;img src&#x3D;&quot;https://cornimagesbucket.s3.us-east-2.amazonaws.com/images_compressed/DSC00037.JPG&quot;&gt;
+            &lt;span *ngIf&#x3D;&quot;answerShown&quot;&gt; 
+                &lt;h4&gt;Healthy&lt;/h4&gt; 
+                &lt;p&gt;This leaf is green with no lesions. There are no signs of blight present.&lt;/p&gt;
+            &lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+            &lt;img src&#x3D;&quot;https://cornimagesbucket.s3.us-east-2.amazonaws.com/images_compressed/DSC00118.JPG&quot;&gt;
+            &lt;span *ngIf&#x3D;&quot;answerShown&quot;&gt;
+                &lt;h4&gt;Unhealthy&lt;/h4&gt;
+                &lt;p class&#x3D;&quot;unhealthyText&quot;&gt; This leaf has multiple tan lesions that are long and narrow. These lesions are caused by
+                    spores of Exserohilum turcicum fungus. 
+                &lt;/p&gt;
+            &lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;button mat-flat-button color&#x3D;&quot;primary&quot; [routerLink]&#x3D;&quot;[&#x27;/activity-two&#x27;]&quot;&gt;Next&lt;/button&gt;
+&lt;/div&gt;
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
                 <p class="comment">
-                    <code>./nav-menu.component.css</code>
+                    <code>./recognize-blight.component.css</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss">.example-spacer {
-    flex: 1 0 auto;
-  }
-
-.example-icon {
-    outline: none !important;
-    border: 0 !important;
-    border-radius: 0px;
-    outline-style: none !important;
-    background-color: Transparent;
-    color: white;
+                <pre class="line-numbers"><code class="language-scss">.images {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
-.header {
-  color: white;
+img {
+    margin-top: 20px;
+    width: 600px;
 }
 
-.sidenav-container {
-  height: 100%;
+.component {
+    padding: 20px;
 }
 
-.sidenav {
-  width: 300px;
-}
-
-.sidenav .mat-toolbar {
-  background: inherit;
-}
-
-.sidenav-list {
-  display: flex;
-  flex-direction: column;
-  /* padding: 20px; */
-}
-
-a {
-  text-decoration: none;
-}
-
-.mat-drawer {
-  width: 250px;
+.unhealthyText {
+    width: 600px;
 }</code></pre>
     </div>
 
@@ -427,10 +413,10 @@ a {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><mat-toolbar color="primary">  <button mat-icon-button class="example-icon">    <mat-icon (click)="sidenav.toggle()" class="menu-icon">menu</mat-icon>  </button>    <span class="example-spacer"></span>    <span class="header">CornBot</span>    <span class="example-spacer"></span>    <button mat-flat-button color="primary" class="logout-button" (click)="logout()">Logout</button>  </mat-toolbar>  <mat-sidenav-container>    <mat-sidenav #sidenav>      <mat-list class="sidenav-list">       <!--  <a mat-list-item [routerLink]="\'/home\'"> Home </a> -->        <a mat-list-item [routerLink]=" \'\home\' "> Home </a>        <a mat-list-item [routerLink]=" \'\activity-one\' ">Activity One</a>        <a mat-list-item [routerLink]=" \'\activity-two\' ">Activity Two</a>        <a mat-list-item [routerLink]=" \'\activity-three\' ">Activity Three</a>        <a mat-list-item [routerLink]=" \'\leaderboard\' ">Leaderboard</a>        <a mat-list-item [routerLink]=" \'\misclassified-images\' ">Misclassification Analytics</a>      </mat-list>    </mat-sidenav>    <mat-sidenav-content>      <div style="height: 88vh;">        <router-outlet></router-outlet>      </div>    </mat-sidenav-content>  </mat-sidenav-container></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="component">    <h3>Recognizing Northern Corn Leaf Blight</h3>    <p>Supervised machine learning models like the one you just tried only perform well when they are given         quality training data. When you marked all of the images as unhealthy, you created a machine learning model         with a strong bias that performed poorly. You can improve your model\'s performance by giving it more         accurate training data. Let\'s learn how to identify Northern Corn Leaf Blight so we can label the images        more accurately.     </p>    <br>    <p>See if you can identify which of the images below is unheathy, and why. Then click the button to check your answer.</p>    <button mat-flat-button color="primary" (click)="showAnswer()">Show Answer</button>    <div class="images">        <div>            <img src="https://cornimagesbucket.s3.us-east-2.amazonaws.com/images_compressed/DSC00037.JPG">            <span *ngIf="answerShown">                 <h4>Healthy</h4>                 <p>This leaf is green with no lesions. There are no signs of blight present.</p>            </span>        </div>        <div>            <img src="https://cornimagesbucket.s3.us-east-2.amazonaws.com/images_compressed/DSC00118.JPG">            <span *ngIf="answerShown">                <h4>Unhealthy</h4>                <p class="unhealthyText"> This leaf has multiple tan lesions that are long and narrow. These lesions are caused by                    spores of Exserohilum turcicum fungus.                 </p>            </span>        </div>    </div>    <button mat-flat-button color="primary" [routerLink]="[\'/activity-two\']">Next</button></div></div>'
     var COMPONENTS = [{'name': 'ActivityOneComponent', 'selector': 'app-activity-one'},{'name': 'ActivityThreeComponent', 'selector': 'app-activity-three'},{'name': 'ActivityTwoComponent', 'selector': 'app-activity-two'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LeaderboardComponent', 'selector': 'app-leaderboard'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MisclassifiedImagesComponent', 'selector': 'app-misclassified-images'},{'name': 'NavMenuComponent', 'selector': 'app-nav-menu'},{'name': 'RecognizeBlightComponent', 'selector': 'app-recognize-blight'}];
     var DIRECTIVES = [];
-    var ACTUAL_COMPONENT = {'name': 'NavMenuComponent'};
+    var ACTUAL_COMPONENT = {'name': 'RecognizeBlightComponent'};
 </script>
 <script src="../js/tree.js"></script>
 
@@ -465,7 +451,7 @@ a {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'NavMenuComponent.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'RecognizeBlightComponent.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

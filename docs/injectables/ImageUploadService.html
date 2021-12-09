@@ -39,7 +39,7 @@
 
 <ol class="breadcrumb">
   <li>Injectables</li>
-  <li >UserService</li>
+  <li >ImageUploadService</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -57,7 +57,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/app/services/user.service.ts</code>
+            <code>src/app/services/image-upload.service.ts</code>
         </p>
 
 
@@ -78,13 +78,7 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#getUID" >getUID</a>
-                            </li>
-                            <li>
-                                <a href="#loginUser" >loginUser</a>
-                            </li>
-                            <li>
-                                <a href="#registerUser" >registerUser</a>
+                                <a href="#getCNNImage" >getCNNImage</a>
                             </li>
                         </ul>
                     </td>
@@ -109,7 +103,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/services/user.service.ts:10</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/services/image-upload.service.ts:8</a></div>
                             </td>
                         </tr>
 
@@ -156,32 +150,31 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="getUID"></a>
+                    <a name="getCNNImage"></a>
                     <span class="name">
-                        <span ><b>getUID</b></span>
-                        <a href="#getUID"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>getCNNImage</b></span>
+                        <a href="#getCNNImage"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>getUID(username: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, token: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+<code>getCNNImage(request: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, token: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="38"
-                            class="link-to-prism">src/app/services/user.service.ts:38</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="15"
+                            class="link-to-prism">src/app/services/image-upload.service.ts:15</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>convenience method to get userid with username, uid is
-needed to create new choice records</p>
+                    <div class="io-description"><p>sends get request with image of maize leaf, returns a base64 image url with blight detected</p>
 </div>
 
                     <div class="io-description">
@@ -197,9 +190,9 @@ needed to create new choice records</p>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>username</td>
+                                    <td>request</td>
                                     <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
                                     </td>
 
                                     <td>
@@ -230,152 +223,7 @@ needed to create new choice records</p>
 
                     </div>
                     <div class="io-description">
-                        <p>userid</p>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="loginUser"></a>
-                    <span class="name">
-                        <span ><b>loginUser</b></span>
-                        <a href="#loginUser"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>loginUser(userData: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="28"
-                            class="link-to-prism">src/app/services/user.service.ts:28</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-description"><p>posts username and password to backend for authentication</p>
-</div>
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
                         
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>userData</td>
-                                    <td>
-                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
-
-                    </div>
-                    <div class="io-description">
-                        <p>authtoken</p>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="registerUser"></a>
-                    <span class="name">
-                        <span ><b>registerUser</b></span>
-                        <a href="#registerUser"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>registerUser(userData: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="19"
-                            class="link-to-prism">src/app/services/user.service.ts:19</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-description"><p>posts username and password to backend to be saved in db</p>
-</div>
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>userData</td>
-                                    <td>
-                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
-
-                    </div>
-                    <div class="io-description">
-                        <p>HTTP Response</p>
-
                     </div>
                 </td>
             </tr>
@@ -387,54 +235,28 @@ needed to create new choice records</p>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
-import { HttpClient, HttpHeaders } from &#x27;@angular/common/http&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { HttpClient, HttpHeaders } from &#x27;@angular/common/http&#x27;;
+import { Injectable } from &#x27;@angular/core&#x27;;
 import { Observable } from &#x27;rxjs&#x27;;
-import { UserModel } from &#x27;../models/user-model&#x27;;
 
 @Injectable({
   providedIn: &#x27;root&#x27;
 })
-
-export class UserService {
+export class ImageUploadService {
 
   constructor(private http: HttpClient) { }
 
   /**
-   * posts username and password to backend to be saved in db
-   * @param userData 
-   * @returns HTTP Response
+   * sends get request with image of maize leaf, returns a base64 image url with blight detected
    */
-  registerUser(userData: any): Observable&lt;any&gt; {
-    return this.http.post(&#x27;http://localhost:8000/api/users/&#x27;, userData)
-  }
-
-  /**
-   * posts username and password to backend for authentication
-   * @param userData 
-   * @returns authtoken
-   */
-  loginUser(userData: any): Observable&lt;any&gt; {
-    return this.http.post(&#x27;http://localhost:8000/api/auth/&#x27;, userData)
-  }
-
-  /**
-   * convenience method to get userid with username, uid is 
-   * needed to create new choice records
-   * @param username 
-   * @returns userid
-   */
-  getUID(username: string, token: string): Observable&lt;any&gt; {
-    // console.log(&quot;Found auth token: &quot; + token);
+  getCNNImage(request: any, token: string): Observable&lt;any&gt; {
     const httpOptions &#x3D; {
       headers: new HttpHeaders({
-        &#x27;Content-Type&#x27;:  &#x27;application/json&#x27;,
         Authorization: &#x27;Token &#x27; + token
       })
     };
-    return this.http.get(&#x27;http://localhost:8000/api/getuid/&#x27; + username + &#x27;/&#x27;, httpOptions);
+    return this.http.post&lt;any&gt;(&#x27;http://localhost:8000/api/getUpload/&#x27;, request, httpOptions);
   }
-
 }
 </code></pre>
     </div>
@@ -469,7 +291,7 @@ export class UserService {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
-            var COMPODOC_CURRENT_PAGE_URL = 'UserService.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'ImageUploadService.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 
